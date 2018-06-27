@@ -1,12 +1,11 @@
 import React from 'react';
 
 
-import 'component/AccountSeachInput/AccountSeachInput.styl'
 
 //import {  Input } from '@progress/kendo-react-inputs';
 import {observer} from 'mobx-react';
 
-
+import 'component/AccountSeachInput/AccountSeachInput.styl'
 
 @observer
 class AccountSeachInput extends React.Component {
