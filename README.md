@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 后台管理系统安装和启动方式
 
 ## 环境依赖:
@@ -26,7 +25,4 @@ Windows系统：
 ```
 yarn run dist_win
 ```
-=======
-# reactApp
-a react demo project
->>>>>>> 58ebeb77bac7942dd82f7b4b4b0769c90de5f64e
+

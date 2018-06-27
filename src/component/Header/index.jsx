@@ -6,6 +6,8 @@
 */
 import React from 'react';
 
+import 'component/Header/index.styl'
+
 class Header extends React.Component{
     constructor(props){
         super(props);

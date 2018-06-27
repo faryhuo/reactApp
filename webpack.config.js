@@ -59,6 +59,14 @@ module.exports = {
                     use: ['css-loader', 'sass-loader']
                 })
             },
+            // styl文件的处理
+            {
+                test: /\.styl$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'stylus-loader']
+                })
+            },
             // 图片的配置
             {
                 test: /\.(png|jpg|gif)$/,
@@ -107,8 +115,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name : 'common',
             filename: 'js/base.js'
-        }),
-        new webpack.HotModuleReplacementPlugin()
+        })
 
     ],
     devtool: '#eval-source-map',//'cheap-module-eval-source-map',
@@ -120,10 +127,6 @@ module.exports = {
           poll: false
         },
         open:true,
-        hot: true,
-        contentBase: false, // since we use CopyWebpackPlugin.
-        compress: true,
-        disableHostCheck:true,
         historyApiFallback: {
             index:'/dist/index.html',
             rewrites:[{
