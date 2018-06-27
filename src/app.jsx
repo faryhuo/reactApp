@@ -8,10 +8,8 @@
 import React            from 'react';
 import ReactDOM         from 'react-dom';
 
-import Header         from 'component/Header/header.jsx';
-import AccountGrid         from 'component/AccountGrid/AccountGrid.jsx';
+import OrderForm         from 'page/OrderForm/OrderForm.jsx';
 
-import Footer         from 'component/Footer/footer.jsx';
 
 import "bootstrap/scss/bootstrap.scss";
 
@@ -20,9 +18,7 @@ class App extends React.Component{
     render(){
         return (
             <div id="App_Conponent">
-                <Header title="Place Bond Order"></Header>
-                <AccountGrid></AccountGrid>
-                <Footer></Footer>
+                <OrderForm></OrderForm>
             </div>
         );
     }

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import 'component/Header/header.styl'
+import { Button } from '@progress/kendo-react-buttons';
 
 class Header extends React.Component{
     constructor(props){
@@ -11,9 +12,10 @@ class Header extends React.Component{
     }
     render(){
         return (
-            <div className="row">
+            <div className="row header">
                 <div className="col-md-12">
-                    <h1 className="page-header">{this.props.title}</h1>
+                    <h1 className="title">{this.props.title}</h1>
+                    <Button primary={true} icon="reset" className="button"> Reset</Button>
                 </div>
             </div>
         );
