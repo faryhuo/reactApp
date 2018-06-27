@@ -8,13 +8,22 @@
 import React            from 'react';
 import ReactDOM         from 'react-dom';
 
-import Header         from 'component/Header/index.jsx';
+import Header         from 'component/Header/header.jsx';
+import AccountGrid         from 'component/AccountGrid/AccountGrid.jsx';
+
+import Footer         from 'component/Footer/footer.jsx';
+
+import "bootstrap/scss/bootstrap.scss";
 
 
 class App extends React.Component{
     render(){
         return (
-            <Header></Header>
+            <div id="App_Conponent">
+                <Header title="Place Bond Order"></Header>
+                <AccountGrid></AccountGrid>
+                <Footer></Footer>
+            </div>
         );
     }
 }
