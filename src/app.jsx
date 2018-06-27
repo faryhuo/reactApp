@@ -8,25 +8,18 @@
 import React            from 'react';
 import ReactDOM         from 'react-dom';
 
+import Header         from 'component/Header/index.jsx';
 
-let style={
-    color:'red',
-    fontSize:'30px'
+
+class App extends React.Component{
+    render(){
+        return (
+            <Header></Header>
+        );
+    }
 }
 
-let name="frary";
-var flag=false;
-let names=["Fary","User","Reson"];
-let jex=(
-      <div className="" style={style}>
-          {flag?<span>jsx....{name}</span>:
-              <span>{name}</span>}
-      </div>
-
-
-    )
-
 ReactDOM.render(
-    jex,
+    <App />,
     document.getElementById('app')
 );

@@ -93,13 +93,13 @@ module.exports = {
             filename: 'index.html',
             template: './src/index.html',
             favicon: './favicon.ico',
-            chunks:["index"]
+            chunks:["common","index"]
         }),
         new HtmlWebpackPlugin({
             filename: 'login.html',
             template: './src/login.html',
             favicon: './favicon.ico',
-            chunks:["login"]
+            chunks:["common","login"]
         }),
         // 独立css文件
         new ExtractTextPlugin("css/[name].css"),
@@ -107,12 +107,28 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name : 'common',
             filename: 'js/base.js'
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
+
     ],
+    devtool: '#eval-source-map',//'cheap-module-eval-source-map',
     devServer: {
+        clientLogLevel: 'warning',
+        quiet: true, // necessary for FriendlyErrorsPlugin
         port: 80,
+        watchOptions: {
+          poll: false
+        },
+        open:true,
+        hot: true,
+        contentBase: false, // since we use CopyWebpackPlugin.
+        compress: true,
+        disableHostCheck:true,
         historyApiFallback: {
-            index: '/dist/index.html'
+            index:'/dist/index.html',
+            rewrites:[{
+                from:"/login",to:'/dist/login.html'
+            }]
         },
         proxy : {
             '/manage' : {
