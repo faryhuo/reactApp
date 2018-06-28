@@ -20,10 +20,10 @@ class AccountGrid extends React.Component {
                     data={this.props.store.accountList}
                 >
                     <Column field="AccountNumber" title="Account Number" width="200px" />
-                    <Column field="ClientName" title="Client Name" width="200px" />
-                    <Column field="AccountStatus" title="Account Status" />
+                    <Column field="ClientName" title="Client Name"  />
+                    <Column field="AccountStatus" title="Account Status" width="200px"/>
                     <Column field="RMName" title="RM Name" width="150px" />
-                    <Column field="bookingCentre" title="Booking Centre" width="80px" />
+                    <Column field="bookingCentre" title="Booking Centre" width="150px" />
                     <Column field="DDCOrder" title="DDCO rder" width="120px"  />
                 </Grid>
             </div>
