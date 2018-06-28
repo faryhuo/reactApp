@@ -5,20 +5,19 @@ import "@progress/kendo-theme-bootstrap/scss/all.scss";
 import 'component/AccountGrid/AccountGrid.styl'
 
 import { Grid, GridColumn as Column, GridCell } from '@progress/kendo-react-grid';
+import {observer} from 'mobx-react';
 
 
+@observer
 class AccountGrid extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            gridData: [{},{}]
-        };
     }
     render() {
         return (
             <div id="AccountGrid"  className="AccountGrid">
                 <Grid
-                    data={this.state.gridData}
+                    data={this.props.store.accountList}
                 >
                     <Column field="AccountNumber" title="Account Number" width="200px" />
                     <Column field="ClientName" title="Client Name" width="200px" />

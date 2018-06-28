@@ -1,0 +1,31 @@
+{
+  "accountList":[{
+      "AccountNumber":"1",
+      "AccountStatus":"1",
+      "ClientName":"1",
+      "RMName":"1",
+      "bookingCentre":"1",
+      "DDCOrder":"1"
+    },{
+      "AccountNumber":"2",
+      "AccountStatus":"2",
+      "ClientName":"2",
+      "RMName":"2",
+      "bookingCentre":"2",
+      "DDCOrder":"2"
+    },{
+      "AccountNumber":"3",
+      "AccountStatus":"3",
+      "ClientName":"3",
+      "RMName":"3",
+      "bookingCentre":"3",
+      "DDCOrder":"3"
+    },{
+      "AccountNumber":"4",
+      "AccountStatus":"4",
+      "ClientName":"4",
+      "RMName":"4",
+      "bookingCentre":"4",
+      "DDCOrder":"4"
+    }]
+}

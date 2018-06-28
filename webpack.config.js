@@ -9,6 +9,8 @@ const webpack           = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const jsonData=require("./seleniumData.json");
+
 let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 console.log(WEBPACK_ENV); 
 module.exports = {
@@ -27,6 +29,7 @@ module.exports = {
             page        : path.resolve(__dirname, 'src/page'),
             component   : path.resolve(__dirname, 'src/component'),
             util        : path.resolve(__dirname, 'src/util'),
+            store        : path.resolve(__dirname, 'src/store'),
             service     : path.resolve(__dirname, 'src/service')
         }
     },
@@ -34,13 +37,13 @@ module.exports = {
         rules: [
             // react(jsx)语法的处理
             {
-                test: /\.jsx$/,
+                test: /\.(jsx|js)$/,
                 exclude: /(node_modules)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['env', 'react','react-native'],
-                        plugins: ["transform-decorators-legacy"]
+                        presets: ['env','react',"latest","mobx"],
+                        plugins: ["transform-runtime"]
                     }
                 }
             },
@@ -133,6 +136,14 @@ module.exports = {
             rewrites:[{
                 from:"/login",to:'/dist/login.html'
             }]
+        },
+        before(app){
+            app.get('/api/getAccountList', function (req, res) {
+              res.json({
+                status: 0,
+                data: jsonData.accountList
+              });
+            });
         },
         proxy : {
             '/manage' : {
