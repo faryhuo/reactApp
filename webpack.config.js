@@ -127,10 +127,12 @@ module.exports = {
         clientLogLevel: 'warning',
         quiet: true, // necessary for FriendlyErrorsPlugin
         port: 80,
+        host: '0.0.0.0', 
         watchOptions: {
           poll: false
         },
-        open:true,
+        disableHostCheck: true,
+        open:false,
         historyApiFallback: {
             index:'/dist/index.html',
             rewrites:[{
@@ -142,18 +144,16 @@ module.exports = {
               res.json({
                 status: 0,
                 data: jsonData.accountList
-              });
+              })
+            })
+            app.get("/api/getInstrunmentList", function (req, res) {
+                res.json({
+                  status: 0,
+                  data: jsonData.instrunmentList
+                })
             });
         },
         proxy : {
-            '/manage' : {
-                target: 'http://admintest.happymmall.com',
-                changeOrigin : true
-            },
-            '/user/logout.do' : {
-                target: 'http://admintest.happymmall.com',
-                changeOrigin : true
-            }
         }
     }
 };

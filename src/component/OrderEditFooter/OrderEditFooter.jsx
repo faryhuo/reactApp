@@ -2,10 +2,10 @@
 import React from 'react';
 import { Button} from '@progress/kendo-react-buttons';
 
-import 'component/Footer/footer.styl'
+import 'component/OrderEditFooter/OrderEditFooter.styl'
 
 
-class Footer extends React.Component{
+class OrderEditFooter extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -25,7 +25,7 @@ class Footer extends React.Component{
 
     render(){
         return (
-            <div className="row footer">
+            <div className="row OrderEditFooter">
                 <div className="btnList">
                    <Button onClick={(e)=>{this.save(e)}}>Save</Button >
                    <Button primary={true}>Submit</Button >
@@ -35,4 +35,4 @@ class Footer extends React.Component{
     }
 }
 
-export default Footer;
+export default OrderEditFooter;

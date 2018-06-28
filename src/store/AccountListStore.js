@@ -10,8 +10,9 @@ class AccountListStore {
   constructor() {
      //getAccountList
      axios.get("/api/getAccountList").then((response)=>{
+      response=response.data;
        if(response.status===0){
-          this.data=response.data;
+          this.accountInfo.data=response.data;
        }
      });
 
@@ -24,7 +25,8 @@ class AccountListStore {
 
   @computed get accountList(){
     return this.accountInfo.data.filter((item)=>{
-      return this.accountInfo.accountNoSearch==="" || item.AccountNumber===this.accountInfo.accountNoSearch
+      return this.accountInfo.accountNoSearch==="" || 
+      item.AccountNumber.indexOf(this.accountInfo.accountNoSearch)!=-1;
     });
   }
 

@@ -6,32 +6,31 @@ import React from 'react';
 import {observer} from 'mobx-react';
 
 
-import 'component/AccountSeachInput/AccountSeachInput.styl'
+import 'component/InstrumentSearch/InstrumentSearch.styl'
 
 @observer
-class AccountSeachInput extends React.Component {
+class InstrumentSearch extends React.Component {
     constructor(props) {
         super(props);
-        let accountNo=this.props.store.accountInfo.accountNoSearch;
+        let instrunmentSearch=this.props.store.instrunmentInfo.instrunmentSearch;
         this.state = {
-            accountNo:accountNo
+            instrunmentSearch:instrunmentSearch
         };
     }
 
-    search(accountNo){
-         this.props.store.search(accountNo);
-         console.log(this.props.store.accountInfo);
+    search(instrunmentName){
+         this.props.store.search(instrunmentName);
     }
 
     render() {
         return (
-            <div id="AccountSeachInput"  className="AccountSeachInput">
+            <div id="InstrumentSearch"  className="InstrumentSearch">
                 <div className="k-form form card">
                     <div className="row">
                     <div className="cell col-sm-12">
                         <fieldset>
                                     <label className="k-form-field">
-                                        <span>Account Serch *</span>
+                                        <span>Instrument Search *</span>
                                         <input onChange={(e)=>{this.search(e.target.value)}} className="k-textbox" defaultValue={this.state.accountNo}  placeholder="Account No" />
                                     </label>
                         </fieldset>
@@ -43,4 +42,4 @@ class AccountSeachInput extends React.Component {
     }
 }
 
-export default AccountSeachInput;
+export default InstrumentSearch;
