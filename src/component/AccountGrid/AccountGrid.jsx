@@ -24,7 +24,7 @@ class AccountGrid extends React.Component {
                     <Column field="AccountStatus" title="Account Status" width="200px"/>
                     <Column field="RMName" title="RM Name" width="150px" />
                     <Column field="bookingCentre" title="Booking Centre" width="150px" />
-                    <Column field="DDCOrder" title="DDCO rder" width="120px"  />
+                    <Column field="DDCOrder" title="DDC Order" width="120px"  />
                 </Grid>
             </div>
         );
