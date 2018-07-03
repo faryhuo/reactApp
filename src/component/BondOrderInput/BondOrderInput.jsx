@@ -53,7 +53,7 @@ class BondOrderInput extends React.Component {
                                 </label>
                             </fieldset>
                         </div>
-                        <div className="col-sm-3">
+                        <div className="cell col-sm-3">
                             <fieldset>
                                 <label className="k-form-field">
                                     <span>Notional *</span>
@@ -92,7 +92,7 @@ class BondOrderInput extends React.Component {
                                 </label>
                             </fieldset>
                         </div>
-                        <div className="col-sm-3">
+                        <div className="cell col-sm-3">
                             <fieldset>
                                 <label className="k-form-field">
                                     <span>Confirmed / To Ve Confirmed *</span>

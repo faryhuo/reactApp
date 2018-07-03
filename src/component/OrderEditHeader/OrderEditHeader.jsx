@@ -47,7 +47,7 @@ class OrderEditHeader extends React.Component {
                                     </label>
                         </fieldset>
                     </div>
-                    <div className="col-sm-3">
+                    <div className="cell col-sm-3">
                         <fieldset>
                                     <label className="k-form-field">
                                         <span>Executiom Type *</span>

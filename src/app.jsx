@@ -4,7 +4,7 @@
 * @Last Modified by:   Rosen
 * @Last Modified time: 2018-02-05 14:02:20
 */  
-
+import 'babel-polyfill'
 import React            from 'react';
 import ReactDOM         from 'react-dom';
 
